@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>領取手冊</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body style="background-color:#87CEFA;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">冒險手冊</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./Mainpage.html">首頁</a></li>
+                </ul>
+                <ul id="TeamNav" class="nav navbar-nav navbar-right">
+                    <li><a id="TeamName" href="./StartGame.html"></a></li>
+                    <li><a href="./StartGame.html">關卡地圖</a></li>
+                    <li><a href="./Bag.html">背包</a></li>
+                    <li><a href="./Diary.html">日記</a></li>
+                    <li><a href="#" id="logout">登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        <div class="row" align="center">
+            <div class="col-xs-12">
+                <h1>
+                    歡迎領取冒險手冊
+                </h1>
+                <div style="padding:5px"></div>
+                <form action="" method="post" name="login">
+                    <div class="form-group" style="padding-top: 20px">
+                        <input type="text" onkeyup="value=value.replace(/[^\a-zA-Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z0-9\u4E00-\u9FA5]/g,''))" name="隊伍暱稱" class="form-control my-input" id="teamname" placeholder="隊伍暱稱">
+                    </div>
+                    <p>隊伍暱稱請輸入中文或英文喔，無法使用特殊字元或標點符號。</p>
+                    <button type="button" class="btn btn-success" id="confirm" her="#">領取你的專屬冒險手冊</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/site.js"></script>
+
+    <script>
+        SetTeamNav();
+
+        $("#confirm").click(function () {
+
+            createCookie("TeamName", $("#teamname").val());
+            createCookie("Stage", "1");
+
+            location.href = 'a01.html';
+        });
+    </script>
+</body>
+</html>

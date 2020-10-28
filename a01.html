@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>溯源旅程</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body style="background-color:#87CEFA;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">第一關</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./Mainpage.html">首頁</a></li>
+                </ul>
+                <ul id="TeamNav" class="nav navbar-nav navbar-right">
+                    <li><a id="TeamName" href="./StartGame.html"></a></li>
+                    <li><a href="./StartGame.html">關卡地圖</a></li>
+                    <li><a href="./Bag.html">背包</a></li>
+                    <li><a href="./Diary.html">日記</a></li>
+                    <li><a href="#" id="logout">登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        <div class="row" align="center">
+            <div class="col-xs-12">
+                <h3>第一關-歷史</h3>
+                <div style="padding:5px"></div>
+                <img src="images/01.jpg" style="height:100%;width:100%" alt="...">
+                <div style="padding:5px"></div>
+                <input type="text" class="form-control" placeholder="請輸入答案" id="Input1">
+                <div style="padding:5px"></div>
+                <button type="button" class="btn btn-primary" id="q1click" onClick="myFunction()">我非常確定!</button>
+                <div style="padding:5px"></div>
+                <div id="nextcheck" hidden="hidden">
+                    <button class="btn btn-primary" onClick="javascript: SetStage(2);location.href='a02.html'">下一關～</button>
+                </div>
+                <a href="images/tip/2.jpg" data-lightbox="images/tip/2.jpg" data-title="下一關提示" id="image1"></a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+
+
+    <script src="./assets/js/lightbox-plus-jquery.min.js"></script>
+    <script src="./assets/js/site.js"></script>
+
+    <script language="javascript">
+
+        var stage = readCookie("Stage");
+        if (stage > 1) {
+            $("#nextcheck").show();
+        }
+
+        var hinttime = 0;
+        function myFunction() {
+            var Answar = document.getElementById("Input1").value;
+            if (Answar == "北新路一段四十五巷" || Answar == "北新路1段45巷" || Answar == "北新路1段四十五巷" || Answar == "北新路一段45巷") {
+                document.getElementById("image1").click();
+                $("#nextcheck").show();
+            } else {
+                if (hinttime == 3) {
+                    alert("答錯摟 但還是給你個提示吧：把貼紙順序排出來，再找出對應的座標");
+                    hinttime++;
+                } else if (hinttime == 5) {
+                    alert("答錯摟 再給你個提示吧：粉紅-藍-淺橘-淺藍-綠-灰-橘-紫-黃");
+                    hinttime++;
+                } else {
+                    alert("答錯摟～");
+                    hinttime++;
+                }
+            }
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

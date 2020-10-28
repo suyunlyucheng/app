@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>背包頁</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="./assets/css/site.css">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body style="background-color:#87CEFA;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">尋寶日記</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./Mainpage.html">首頁</a></li>
+                </ul>
+                <ul id="TeamNav" class="nav navbar-nav navbar-right">
+                    <li><a id="TeamName" href="./StartGame.html"></a></li>
+                    <li><a href="./StartGame.html">關卡地圖</a></li>
+                    <li><a href="./Bag.html">背包</a></li>
+                    <li><a href="./Diary.html">日記</a></li>
+                    <li><a href="#" id="logout">登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+
+
+        <div class="row centered mt grid " align="center">
+
+            <h3>尋寶日記</h3>
+            <div class="mt"></div>
+            <div class="col-lg-4" align="center" id="R1">
+                <div class="card">
+                    <a href="a01.html"><img src="images/bag/第一關回顧.jpg" alt="..." style="height:100%;width:100%" class="card-img-top"></a>
+                    <div class="card-body">
+                        <p class="card-text">第一關</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" align="center" id="R2">
+                <div class="card">
+                    <a href="a02.html"><img src="images/bag/第二關回顧.jpg" alt="..." style="height:100%;width:100%" class="card-img-top"></a>
+                    <div class="card-body">
+                        <p class="card-text">第二關</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" align="center" id="R3">
+                <div class="card">
+                    <a href="a03.html"><img src="images/bag/第三關回顧.jpg" alt="..." style="height:100%;width:100%" class="card-img-top"></a>
+                    <div class="card-body">
+                        <p class="card-text">第三關</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row centered mt grid">
+            <div class="mt"></div>
+            <div class="col-lg-4" align="center" id="R4">
+                <div class="card">
+                    <a href="a04.html"><img src="images/bag/第四關回顧.jpg" alt="..." style="height:100%;width:100%" class="card-img-top"></a>
+                    <div class="card-body">
+                        <p class="card-text">第四關</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" align="center" id="R5">
+                <div class="card">
+                    <a href="a05.html"><img src="images/bag/第五關回顧.jpg" alt="..." style="height:100%;width:100%" class="card-img-top"></a>
+                    <div class="card-body">
+                        <p class="card-text">第五關</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" align="center" id="R6">
+                <div class="card">
+                    <a href="a06.html"><img src="images/bag/第六關回顧.jpg" alt="..." style="height:100%;width:100%" class="card-img-top"></a>
+                    <div class="card-body">
+                        <p class="card-text">第六關</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <a href="https://www.facebook.com/%E6%BA%AF%E6%BA%90%E6%97%85%E5%9F%8E-100347954923216"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/suyuan2020/?hl=zh-tw"><i class="fa fa-instagram"></i></a>
+                    <a href="https://lin.ee/u5EJ5Sr"><i class="fa fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/site.js"></script>
+
+    <script>
+        FindTeamCookies();
+
+
+        var stage = GetStage();
+
+        for (var i = 1; i <= 7; i++) {
+            var target = document.getElementById("R" + i);
+            if (stage > i) {
+                target.style.display = "";
+            } else {
+                target.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

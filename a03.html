@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>溯源旅程</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="./assets/css/site.css">
+</head>
+<body style="background-color:#87CEFA;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">第三關</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./Mainpage.html">首頁</a></li>
+                </ul>
+                <ul id="TeamNav" class="nav navbar-nav navbar-right">
+                    <li><a id="TeamName" href="./StartGame.html"></a></li>
+                    <li><a href="./StartGame.html">關卡地圖</a></li>
+                    <li><a href="./Bag.html">背包</a></li>
+                    <li><a href="./Diary.html">日記</a></li>
+                    <li><a href="#" id="logout">登出</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        <div class="row" align="center">
+            <div class="col-xs-12">
+                <h3>第三關-交通</h3>
+                <div style="padding:5px"></div>
+                <img src="images/03.jpg" style="height:100%;width:100%" alt="...">
+                <div style="padding:5px"></div>
+                <p>實線往外折，虛線往內摺，最後一步記得把紙「翻出顏色」！</p>
+                <p>答案為「碧潭__ __ __ __ __ __ 誌」</p>
+                <div style="padding:5px"></div>
+                <input type="text" class="form-control" placeholder="請輸入答案" id="Input1">
+                <div style="padding:5px"></div>
+                <button type="button" class="btn btn-primary" id="q1click" onClick="myFunction()">我非常確定!</button>
+                <div style="padding:5px"></div>
+                <div id="nextcheck" hidden="hidden">
+                    <button class="btn btn-primary" onClick="javascript:SetStage(4);location.href='a04.html'">下一關～</button>
+                </div>
+                <a href="images/tip/4.jpg" data-lightbox="images/tip/4.jpg" data-title="下一關提示" id="image1"></a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+
+
+    <script src="./assets/js/lightbox-plus-jquery.min.js"></script>
+    <script src="./assets/js/site.js"></script>
+
+    <script language="javascript">
+
+        var stage = readCookie("Stage");
+        if (stage > 3) {
+            $("#nextcheck").show();
+        }
+
+        var hinttime = 0;
+        function myFunction() {
+            var Answar = document.getElementById("Input1").value;
+            if (Answar == "碧潭吊橋原貌整修誌") {
+                document.getElementById("image1").click();
+                $("#nextcheck").show();
+            } else {
+                if (hinttime == 3) {
+                    alert("答錯摟 但還是給你個提示吧：人：4、船：5、魚：7");
+                    hinttime++;
+                } else if (hinttime == 5) {
+                    alert("答錯摟 再給你個提示吧：摺出來為一艘船，答案在船正中間");
+                    hinttime++;
+                } else {
+                    alert("答錯摟～");
+                    hinttime++;
+                }
+            }
+        }
+
+
+    </script>
+
+
+</body>
+</html>
